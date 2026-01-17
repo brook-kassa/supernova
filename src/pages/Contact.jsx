@@ -26,7 +26,7 @@ export default function Contact() {
                 alt="SUPERNOVAsys"
                 className="brand__textLogoHeader"
               />
-              <p className="brand__tagline">Set IT, Forget IT</p>
+              <p className="brand__tagline">Set IT & Forget IT Systems</p>
             </div>
           </div>
         </Link>
@@ -35,6 +35,7 @@ export default function Contact() {
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
           <Link to="/about">About</Link>
+          <Link to="/blog">Blog</Link>
           <Link to="/contact">Contact</Link>
           <a href="mailto:brook.kassa@supernovas.it" className="header__nav--cta">Get Started</a>
         </nav>
@@ -55,7 +56,7 @@ export default function Contact() {
             
             <div className="contact-methods">
               <div className="contact-method" data-aos="slide-left-cosmic">
-                <h3>📧 Email</h3>
+                <h3>✦ Email</h3>
                 <p>
                   <a href="mailto:brook.kassa@supernovas.it">brook.kassa@supernovas.it</a>
                 </p>
@@ -63,15 +64,15 @@ export default function Contact() {
               </div>
 
               <div className="contact-method" data-aos="pulse-in-cosmic" data-aos-delay="100">
-                <h3>📞 Phone</h3>
+                <h3>☆ Phone</h3>
                 <p>
-                  <a href="tel:+17633000767">(763) 300-0767</a>
+                  <a href="tel:+17633000767">+1 (763) 300-0767</a>
                 </p>
                 <p className="contact-note">Available for consultations</p>
               </div>
 
               <div className="contact-method" data-aos="slide-right-cosmic">
-                <h3>📍 Location</h3>
+                <h3>★ Location</h3>
                 <p>Philadelphia, Pennsylvania</p>
                 <p className="contact-note">Remote-first support across the US</p>
               </div>
@@ -111,6 +112,7 @@ export default function Contact() {
 
       {/* Footer */}
       <footer className="footer">
+        <p className="footer__orbit-text">🚀 Stay in our orbit!</p>
         <div className="social-links">
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>
@@ -130,11 +132,14 @@ export default function Contact() {
           <a href="https://facebook.com" className="social-btn" title="Facebook" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>
+          <a href="https://discord.gg/kXTSJEwt" className="social-btn" title="Discord" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-discord"></i>
+          </a>
         </div>
         <div className="footer__inner">
           <span>© {new Date().getFullYear()} Supernova Systems LLC</span>
           <span className="footer__sep">•</span>
-          <span>Jet Black. Blood Red. Reliable Systems.</span>
+          <span>Enterprise IT. Startup Pricing. Zero Compromises.</span>
         </div>
       </footer>
     </div>

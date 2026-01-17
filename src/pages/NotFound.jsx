@@ -26,7 +26,7 @@ export default function NotFound() {
                 alt="SUPERNOVAsys"
                 className="brand__textLogoHeader"
               />
-              <p className="brand__tagline">Set IT, Forget IT</p>
+              <p className="brand__tagline">Set IT & Forget IT Systems</p>
             </div>
           </div>
         </Link>
@@ -35,6 +35,7 @@ export default function NotFound() {
           <Link to="/">Home</Link>
           <Link to="/services">Services</Link>
           <Link to="/about">About</Link>
+          <Link to="/blog">Blog</Link>
           <Link to="/contact">Contact</Link>
           <a href="mailto:brook.kassa@supernovas.it" className="header__nav--cta">Get Started</a>
         </nav>
@@ -95,6 +96,7 @@ export default function NotFound() {
 
       {/* Footer */}
       <footer className="footer">
+        <p className="footer__orbit-text">🚀 Stay in our orbit!</p>
         <div className="social-links">
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>
@@ -114,11 +116,14 @@ export default function NotFound() {
           <a href="https://facebook.com" className="social-btn" title="Facebook" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>
+          <a href="https://discord.gg/kXTSJEwt" className="social-btn" title="Discord" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-discord"></i>
+          </a>
         </div>
         <div className="footer__inner">
           <span>© {new Date().getFullYear()} Supernova Systems LLC</span>
           <span className="footer__sep">•</span>
-          <span>Jet Black. Blood Red. Reliable Systems.</span>
+          <span>Enterprise IT. Startup Pricing. Zero Compromises.</span>
         </div>
       </footer>
     </div>

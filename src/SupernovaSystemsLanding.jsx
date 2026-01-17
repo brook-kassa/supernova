@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import StarfieldCanvas from "./StarfieldCanvas.jsx";
 
@@ -16,6 +16,32 @@ function SunIcon() {
       <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
     </svg>
   );
+}
+
+function TechIcon({ name }) {
+  // Azure uses image logo, others use FontAwesome
+  if (name === 'Azure') {
+    return (
+      <img 
+        src="https://swimburger.net/media/ppnn3pcl/azure.png" 
+        alt="Azure" 
+        className="tech-icon-img"
+        style={{ filter: 'sepia(1) saturate(3) hue-rotate(-10deg) brightness(1.3)' }}
+      />
+    );
+  }
+
+  const iconMap = {
+    'AWS': 'fab fa-aws',
+    'Docker': 'fab fa-docker',
+    'Kubernetes': 'fas fa-dharmachakra',
+    'GCP': 'fab fa-google',
+    'HIPAA': 'fas fa-shield-alt',
+    'SOC 2': 'fas fa-check-circle',
+    'ISO 27001': 'fas fa-certificate',
+  };
+
+  return <i className={iconMap[name] || 'fas fa-cube'} aria-label={name}></i>;
 }
 
 function Pill({ children }) {
@@ -40,6 +66,17 @@ function GlowButton({ children, onClick, href }) {
 }
 
 function CalendlyModal({ isOpen, onClose }) {
+  useEffect(() => {
+    if (isOpen && window.Calendly) {
+      window.Calendly.initInlineWidget({
+        url: 'https://calendly.com/brookassa4/30min',
+        parentElement: document.querySelector('.calendly-inline-widget'),
+        prefill: {},
+        utm: {}
+      });
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
@@ -51,8 +88,6 @@ function CalendlyModal({ isOpen, onClose }) {
         <div className="calendly-widget-container">
           <div
             className="calendly-inline-widget"
-            data-url="https://calendly.com/brook-kassa/30min?hide_event_type_details=1&hide_gdpr_block=1"
-            style={{ minWidth: "100%", height: "100%" }}
           ></div>
         </div>
       </div>
@@ -60,7 +95,7 @@ function CalendlyModal({ isOpen, onClose }) {
   );
 }
 
-function AccordionItem({ title, desc, details, isOpen, onToggle }) {
+function AccordionItem({ title, desc, details, isOpen, onToggle, logos }) {
   return (
     <div className="accordion__item">
       <button
@@ -78,6 +113,15 @@ function AccordionItem({ title, desc, details, isOpen, onToggle }) {
         <div className="accordion__content">
           <p className="accordion__summary">{desc}</p>
           {details && <p className="accordion__details">{details}</p>}
+          {logos && (
+            <div className="accordion__logos">
+              {logos.map((logo, idx) => (
+                <span key={idx} className="tech-badge" title={logo}>
+                  <TechIcon name={logo} />
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </div>
@@ -95,22 +139,25 @@ export default function SupernovaSystemsLanding() {
       {
         title: "Cloud & Infrastructure",
         desc: "Scalable, secure cloud solutions that grow with your business.",
-        details: "We design and deploy AWS and Azure environments tailored to your needs. Whether you need hybrid setups, containerization, or serverless architecture, we build infrastructure that scales efficiently without vendor lock-in.",
+        details: "We design and deploy AWS and Azure environments tailored to your needs. Whether you need hybrid setups, containerization, or serverless architecture, we build infrastructure that scales efficiently without vendor lock-in. Certified in both AWS and Azure platforms.",
+        logos: ["AWS", "Azure", "Docker", "Kubernetes"],
       },
       {
         title: "Cybersecurity & Compliance",
         desc: "Multi-layer protection against threats and regulatory requirements.",
         details: "We implement defense-in-depth security: endpoint protection, network segmentation, identity management, and compliance frameworks like HIPAA, SOC 2, and ISO 27001. Regular audits ensure you stay protected.",
+        logos: ["HIPAA", "SOC 2", "ISO 27001"],
       },
       {
         title: "Data & Disaster Recovery",
         desc: "Automated backups with instant recovery capabilities.",
-        details: "We design backup strategies that actually work. Automated, tested, geo-redundant backups with RPO/RTO guarantees. In an emergency, you're back online in minutes, not days.",
+        details: "Automated, tested, geo-redundant backups with RPO/RTO guarantees. In an emergency, you're back online in minutes, not days.",
       },
       {
         title: "Cloud Migration",
         desc: "Move from on-prem to cloud with zero disruption.",
         details: "We handle assessment, planning, cutover, and validation. Whether it's a lift-and-shift, replatform, or refactor approach, we minimize downtime and ensure data integrity throughout the migration.",
+        logos: ["AWS", "Azure", "GCP"],
       },
       {
         title: "Consulting & Strategy",
@@ -141,7 +188,7 @@ export default function SupernovaSystemsLanding() {
       {
         title: "Expert Support Team",
         desc: "Certified engineers who actually know infrastructure.",
-        details: "You get AWS-certified, Azure-certified engineers—not script readers. When issues arise, you talk to someone who understands your systems inside and out, not a generic support desk.",
+        details: "Our team consists of AWS-certified and Azure-certified engineers with real-world expertise. When issues arise, you work directly with professionals who understand your systems deeply and can solve problems efficiently.",
       },
       {
         title: "Predictable Costs",
@@ -187,7 +234,7 @@ export default function SupernovaSystemsLanding() {
                 alt="SUPERNOVAsys"
                 className="brand__textLogoHeader"
               />
-              <p className="brand__tagline">Set IT, Forget IT</p>
+              <p className="brand__tagline">Set IT & Forget IT Systems</p>
             </div>
           </div>
         </Link>
@@ -195,6 +242,7 @@ export default function SupernovaSystemsLanding() {
         <nav className="header__nav">
           <Link to="/services">Services</Link>
           <Link to="/about">About</Link>
+          <Link to="/blog">Blog</Link>
           <Link to="/contact">Contact</Link>
           <a href="mailto:brook.kassa@supernovas.it" className="header__nav--cta">Get Started</a>
         </nav>
@@ -205,17 +253,18 @@ export default function SupernovaSystemsLanding() {
         <div className="hero__grid">
           <div className="hero__copy">
             <div className="hero__pills" data-aos="fade-up-cosmic">
-              <Pill>Growing Businesses</Pill>
-              <Pill>Zero Downtime</Pill>
-              <Pill>Expert Support</Pill>
+              <Pill>Cloud & Infrastructure</Pill>
+              <Pill>IT Strategy & Consulting</Pill>
+              <Pill>Networking & Monitoring</Pill>
+              <Pill>Security & Reliability</Pill>
             </div>
 
             <h1 className="hero__title" data-aos="fade-up-cosmic" data-aos-delay="100">
-              Your systems are imploding. — <span className="hero__titleRed">We'll make them explode.</span>
+              <span className="hero__titleRed">Systems that won't implode,</span> <span className="hero__titleGold">so your business can explode.</span>
             </h1>
 
             <p className="hero__subtitle" data-aos="fade-up-cosmic" data-aos-delay="200">
-              Stop throwing money at IT. Get institutional-grade infrastructure at startup prices, complete with expert support and zero distractions.
+              Stop throwing money at IT. Get institutional-grade infrastructure at startup prices, complete with expert support and proactive monitoring.
             </p>
 
             <div className="hero__ctaRow" data-aos="fade-up-cosmic" data-aos-delay="300">
@@ -224,7 +273,7 @@ export default function SupernovaSystemsLanding() {
 
             <div className="hero__micro" data-aos="fade-up-cosmic" data-aos-delay="400">
               <span className="microDot" />
-              <span>24/7 monitoring • 99.9% uptime guarantee • Certified engineers</span>
+              <span>24/7 monitoring • <span className="text-gold">99.9% uptime guarantee</span> • Certified engineers</span>
             </div>
           </div>
 
@@ -251,7 +300,7 @@ export default function SupernovaSystemsLanding() {
             </div>
 
             <p className="core__caption">
-              Controlled glow + smooth orbit. Professional by default.
+              24/7 monitoring. Enterprise reliability. Zero compromise.
             </p>
           </div>
         </div>
@@ -262,7 +311,7 @@ export default function SupernovaSystemsLanding() {
         <div className="section__head section__head--center">
           <h2 className="section__title" data-aos="rotate-in-cosmic">What We Offer</h2>
           <p className="section__sub" data-aos="fade-up-cosmic">
-            Comprehensive IT services designed to keep your business running—and growing.
+            Comprehensive IT services designed to keep your business running and growing.
           </p>
         </div>
 
@@ -273,6 +322,7 @@ export default function SupernovaSystemsLanding() {
               title={s.title}
               desc={s.desc}
               details={s.details}
+              logos={s.logos}
               isOpen={openServices === idx}
               onToggle={() => setOpenServices(openServices === idx ? -1 : idx)}
             />
@@ -306,7 +356,7 @@ export default function SupernovaSystemsLanding() {
         <div className="section__head section__head--above-boxes">
           <h2 className="section__title" data-aos="rotate-in-cosmic">Ready to Get Started?</h2>
           <p className="section__sub" data-aos="fade-up-cosmic">
-            Let's talk about your IT challenges and build a plan that actually works.
+            Let's talk about your IT challenges and build a plan that fits your goals.
           </p>
         </div>
 
@@ -324,8 +374,8 @@ export default function SupernovaSystemsLanding() {
             </p>
             <p className="contact__text">
               Phone:{" "}
-              <a href="tel:763-300-0767">
-                (763) 300-0767
+              <a href="tel:+17633000767">
+                +1 (763) 300-0767
               </a>
             </p>
           </div>
@@ -333,10 +383,10 @@ export default function SupernovaSystemsLanding() {
           <div className="contact__box contact__box--accent">
             <h3>What to Expect</h3>
             <ul className="contact__list">
-              <li>✓ Free IT assessment</li>
-              <li>✓ Personalized recommendations</li>
-              <li>✓ No hard-sell pressure</li>
-              <li>✓ Clear next steps</li>
+              <li><span className="checkmark">✓</span> <span className="text-gold">Free</span> IT assessment</li>
+              <li><span className="checkmark">✓</span> Personalized recommendations</li>
+              <li><span className="checkmark">✓</span> No hard-sell pressure</li>
+              <li><span className="checkmark">✓</span> Clear next steps</li>
             </ul>
             <button className="btn-glow" onClick={() => setShowCalendly(true)} style={{ marginTop: "16px", width: "100%" }}>
               <span className="btn-glow__shine" aria-hidden="true" />
@@ -350,6 +400,7 @@ export default function SupernovaSystemsLanding() {
 
       {/* Footer */}
       <footer className="footer">
+        <p className="footer__orbit-text">🚀 Stay in our orbit!</p>
         <div className="social-links">
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>
@@ -369,11 +420,14 @@ export default function SupernovaSystemsLanding() {
           <a href="https://facebook.com" className="social-btn" title="Facebook" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>
+          <a href="https://discord.gg/kXTSJEwt" className="social-btn" title="Discord" target="_blank" rel="noopener noreferrer">
+            <i className="fab fa-discord"></i>
+          </a>
         </div>
         <div className="footer__inner">
           <span>© {new Date().getFullYear()} Supernova Systems LLC</span>
           <span className="footer__sep">•</span>
-          <span>Jet Black. Blood Red. Reliable Systems.</span>
+          <span>Enterprise IT. Startup Pricing. Zero Compromises.</span>
         </div>
       </footer>
     </div>
