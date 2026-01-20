@@ -26,7 +26,7 @@ export default function Blog() {
                 alt="SUPERNOVAsys"
                 className="brand__textLogoHeader"
               />
-              <p className="brand__tagline">Set IT & Forget IT Systems</p>
+              <p className="brand__tagline">Enterprise IT. Startup Pricing.</p>
             </div>
           </div>
         </Link>
@@ -65,7 +65,7 @@ export default function Blog() {
             <div className="values-grid">
               <div className="value-card" data-aos="pulse-in-cosmic" data-aos-delay="300">
                 <h3>☁️ Cloud Guides</h3>
-                <p>Step-by-step tutorials on AWS, Azure, and hybrid cloud deployments</p>
+                <p>Step-by-step tutorials on Azure and hybrid cloud deployments</p>
               </div>
 
               <div className="value-card" data-aos="pulse-in-cosmic" data-aos-delay="350">

@@ -26,7 +26,7 @@ export default function About() {
                 alt="SUPERNOVAsys"
                 className="brand__textLogoHeader"
               />
-              <p className="brand__tagline">Set IT & Forget IT Systems</p>
+              <p className="brand__tagline">Enterprise IT. Startup Pricing.</p>
             </div>
           </div>
         </Link>
@@ -46,7 +46,7 @@ export default function About() {
         <div className="section__head section__head--center">
           <h1 className="section__title" data-aos="rotate-in-cosmic">A Bit About Us..</h1>
           <p className="section__sub" data-aos="fade-up-cosmic">
-            Set IT & Forget IT Systems.
+            Proactive IT management for growing businesses.
           </p>
           
           {/* Curved Logo Badge */}
@@ -90,7 +90,7 @@ export default function About() {
             <h2>Our Approach</h2>
             <p>
               From remote monitoring and support to cybersecurity and cloud migrations, Supernova blends proactive IT care with a deep understanding of clients' time, budget, and goals. 
-              Whether you're scaling your first startup or modernizing your infrastructure, we make it easy to "Set IT & Forget IT Systems."
+              Whether you're scaling your first startup or modernizing your infrastructure, we ensure your systems are reliable, secure, and ready for growth.
             </p>
 
             <div className="values-grid">

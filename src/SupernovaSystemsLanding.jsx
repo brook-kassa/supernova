@@ -32,10 +32,8 @@ function TechIcon({ name }) {
   }
 
   const iconMap = {
-    'AWS': 'fab fa-aws',
     'Docker': 'fab fa-docker',
     'Kubernetes': 'fas fa-dharmachakra',
-    'GCP': 'fab fa-google',
     'HIPAA': 'fas fa-shield-alt',
     'SOC 2': 'fas fa-check-circle',
     'ISO 27001': 'fas fa-certificate',
@@ -139,8 +137,8 @@ export default function SupernovaSystemsLanding() {
       {
         title: "Cloud & Infrastructure",
         desc: "Scalable, secure cloud solutions that grow with your business.",
-        details: "We design and deploy AWS and Azure environments tailored to your needs. Whether you need hybrid setups, containerization, or serverless architecture, we build infrastructure that scales efficiently without vendor lock-in. Certified in both AWS and Azure platforms.",
-        logos: ["AWS", "Azure", "Docker", "Kubernetes"],
+        details: "We design and deploy Microsoft Azure environments tailored to your needs. Whether you need hybrid setups, containerization, or serverless architecture, we build infrastructure that scales efficiently. Certified Azure engineers with deep Microsoft ecosystem expertise.",
+        logos: ["Azure", "Docker", "Kubernetes"],
       },
       {
         title: "Cybersecurity & Compliance",
@@ -156,8 +154,8 @@ export default function SupernovaSystemsLanding() {
       {
         title: "Cloud Migration",
         desc: "Move from on-prem to cloud with zero disruption.",
-        details: "We handle assessment, planning, cutover, and validation. Whether it's a lift-and-shift, replatform, or refactor approach, we minimize downtime and ensure data integrity throughout the migration.",
-        logos: ["AWS", "Azure", "GCP"],
+        details: "We handle assessment, planning, cutover, and validation. Whether it's a lift-and-shift, replatform, or refactor approach, we minimize downtime and ensure data integrity throughout the migration to the cloud.",
+        logos: ["Azure"],
       },
       {
         title: "Consulting & Strategy",
@@ -188,7 +186,7 @@ export default function SupernovaSystemsLanding() {
       {
         title: "Expert Support Team",
         desc: "Certified engineers who actually know infrastructure.",
-        details: "Our team consists of AWS-certified and Azure-certified engineers with real-world expertise. When issues arise, you work directly with professionals who understand your systems deeply and can solve problems efficiently.",
+        details: "Our team consists of Microsoft-certified engineers with real-world expertise in Azure and the Microsoft ecosystem. When issues arise, you work directly with professionals who understand your systems deeply and can solve problems efficiently.",
       },
       {
         title: "Predictable Costs",
@@ -234,7 +232,7 @@ export default function SupernovaSystemsLanding() {
                 alt="SUPERNOVAsys"
                 className="brand__textLogoHeader"
               />
-              <p className="brand__tagline">Set IT & Forget IT Systems</p>
+              <p className="brand__tagline">Enterprise IT. Startup Pricing.</p>
             </div>
           </div>
         </Link>
@@ -385,7 +383,7 @@ export default function SupernovaSystemsLanding() {
             <ul className="contact__list">
               <li><span className="checkmark">✓</span> <span className="text-gold">Free</span> IT assessment</li>
               <li><span className="checkmark">✓</span> Personalized recommendations</li>
-              <li><span className="checkmark">✓</span> No hard-sell pressure</li>
+              <li><span className="checkmark">✓</span> Zero pressure, just solutions</li>
               <li><span className="checkmark">✓</span> Clear next steps</li>
             </ul>
             <button className="btn-glow" onClick={() => setShowCalendly(true)} style={{ marginTop: "16px", width: "100%" }}>

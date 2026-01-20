@@ -26,7 +26,7 @@ export default function NotFound() {
                 alt="SUPERNOVAsys"
                 className="brand__textLogoHeader"
               />
-              <p className="brand__tagline">Set IT & Forget IT Systems</p>
+              <p className="brand__tagline">Enterprise IT. Startup Pricing.</p>
             </div>
           </div>
         </Link>
