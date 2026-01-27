@@ -349,6 +349,31 @@ export default function SupernovaSystemsLanding() {
         </div>
       </section>
 
+      {/* Partnership Section */}
+      <section className="section section--partnership" id="partners">
+        <div className="partnership-container" data-aos="fade-up-cosmic">
+          <div className="partnership-content">
+            <div className="partnership-badge">
+              <span className="partnership-badge__label">Trusted Partner</span>
+            </div>
+            <h3 className="partnership-title">Powered by Enterprise Excellence</h3>
+            <p className="partnership-description">
+              As a certified DELL partner, we deliver enterprise-grade hardware and support that matches our commitment to excellence. Our partnership ensures you get institutional-quality infrastructure at competitive pricing.
+            </p>
+          </div>
+          <div className="partnership-logo">
+            <div className="partner-logo-wrapper">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/2048px-Dell_Logo.svg.png" 
+                alt="DELL Partner Logo" 
+                className="partner-logo"
+              />
+              <div className="partner-logo-glow" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Contact */}
       <section className="section" id="contact">
         <div className="section__head section__head--above-boxes">
