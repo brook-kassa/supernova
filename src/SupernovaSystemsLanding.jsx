@@ -67,7 +67,7 @@ function CalendlyModal({ isOpen, onClose }) {
   useEffect(() => {
     if (isOpen && window.Calendly) {
       window.Calendly.initInlineWidget({
-        url: 'https://calendly.com/brookassa4/30min',
+        url: 'https://calendly.com/brookassa4/30min?background_color=1a1a1a&text_color=ffffff&primary_color=b00020',
         parentElement: document.querySelector('.calendly-inline-widget'),
         prefill: {},
         utm: {}
@@ -137,25 +137,14 @@ export default function SupernovaSystemsLanding() {
       {
         title: "Cloud & Infrastructure",
         desc: "Scalable, secure cloud solutions that grow with your business.",
-        details: "We design and deploy Microsoft Azure environments tailored to your needs. Whether you need hybrid setups, containerization, or serverless architecture, we build infrastructure that scales efficiently. Certified Azure engineers with deep Microsoft ecosystem expertise.",
+        details: "We design and deploy Microsoft Azure environments tailored to your needs. Whether you need hybrid setups, containerization, or serverless architecture, we build infrastructure that scales efficiently. Certified Azure engineers with deep Microsoft ecosystem expertise. We also handle cloud migrations from on-prem with zero disruption—assessment, planning, cutover, and validation to minimize downtime.",
         logos: ["Azure", "Docker", "Kubernetes"],
       },
       {
         title: "Cybersecurity & Compliance",
         desc: "Multi-layer protection against threats and regulatory requirements.",
-        details: "We implement defense-in-depth security: endpoint protection, network segmentation, identity management, and compliance frameworks like HIPAA, SOC 2, and ISO 27001. Regular audits ensure you stay protected.",
+        details: "We implement defense-in-depth security: endpoint protection, network segmentation, identity management, and compliance frameworks like HIPAA, SOC 2, and ISO 27001. Regular audits ensure you stay protected. Includes automated, tested, geo-redundant backups with RPO/RTO guarantees for instant disaster recovery.",
         logos: ["HIPAA", "SOC 2", "ISO 27001"],
-      },
-      {
-        title: "Data & Disaster Recovery",
-        desc: "Automated backups with instant recovery capabilities.",
-        details: "Automated, tested, geo-redundant backups with RPO/RTO guarantees. In an emergency, you're back online in minutes, not days.",
-      },
-      {
-        title: "Cloud Migration",
-        desc: "Move from on-prem to cloud with zero disruption.",
-        details: "We handle assessment, planning, cutover, and validation. Whether it's a lift-and-shift, replatform, or refactor approach, we minimize downtime and ensure data integrity throughout the migration to the cloud.",
-        logos: ["Azure"],
       },
       {
         title: "Consulting & Strategy",
@@ -184,19 +173,9 @@ export default function SupernovaSystemsLanding() {
         details: "Security isn't an afterthought—it's embedded in every system we build. We implement zero-trust architectures, encryption, access controls, and regular audits to keep your data and customer data safe.",
       },
       {
-        title: "Expert Support Team",
-        desc: "Certified engineers who actually know infrastructure.",
-        details: "Our team consists of Microsoft-certified engineers with real-world expertise in Azure and the Microsoft ecosystem. When issues arise, you work directly with professionals who understand your systems deeply and can solve problems efficiently.",
-      },
-      {
-        title: "Predictable Costs",
-        desc: "Fixed monthly fees with no hidden charges or surprise bills.",
-        details: "We optimize your cloud spend, right-size your infrastructure, and provide transparent reporting. You know exactly what you're paying for IT every month.",
-      },
-      {
-        title: "Transparent Reporting",
-        desc: "Full visibility into your systems, metrics, and costs.",
-        details: "Monthly business reviews show uptime stats, security posture, performance metrics, and cost trends. We use dashboards and reports so you're always informed about your infrastructure health.",
+        title: "Expert Support & Transparent Pricing",
+        desc: "Certified engineers with fixed monthly fees and full visibility.",
+        details: "Our team consists of Microsoft-certified engineers with real-world expertise in Azure and the Microsoft ecosystem. When issues arise, you work directly with professionals who understand your systems deeply. You get predictable costs with no hidden charges, plus monthly business reviews showing uptime stats, security posture, performance metrics, and cost trends.",
       },
     ],
     []
@@ -242,7 +221,7 @@ export default function SupernovaSystemsLanding() {
           <Link to="/about">About</Link>
           <Link to="/blog">Blog</Link>
           <Link to="/contact">Contact</Link>
-          <a href="mailto:brook.kassa@supernovas.it" className="header__nav--cta">Get Started</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); setShowCalendly(true); }} className="header__nav--cta">Get Started</a>
         </nav>
       </header>
 
@@ -276,7 +255,7 @@ export default function SupernovaSystemsLanding() {
           </div>
 
           {/* Animated Core (larger now) */}
-          <div className="hero__coreWrap" data-aos="pulse-in-cosmic">
+          <Link to="/about" className="hero__coreWrap" data-aos="pulse-in-cosmic">
             <div className="supernova-orbit supernova-orbit--lg" role="img" aria-label="Supernova Core">
               <div className="ring ring--a" />
               <div className="ring ring--b" />
@@ -300,7 +279,7 @@ export default function SupernovaSystemsLanding() {
             <p className="core__caption">
               24/7 monitoring. Enterprise reliability. Zero compromise.
             </p>
-          </div>
+          </Link>
         </div>
       </section>
 
@@ -413,7 +392,7 @@ export default function SupernovaSystemsLanding() {
             </ul>
             <button className="btn-glow" onClick={() => setShowCalendly(true)} style={{ marginTop: "16px", width: "100%" }}>
               <span className="btn-glow__shine" aria-hidden="true" />
-              <span className="btn-glow__text">Open Calendar</span>
+              <span className="btn-glow__text">Schedule Free Consultation</span>
             </button>
           </div>
         </div>
