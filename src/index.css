@@ -628,6 +628,367 @@ a:hover {
   .cards {
     grid-template-columns: 1fr;
   }
+  
+  /* Prevent overflow on mobile */
+  * {
+    max-width: 100vw;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
+  
+  /* AGGRESSIVE HEADER MOBILE OPTIMIZATION */
+  .header {
+    padding: 8px 12px;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .header__brand-link {
+    min-width: 0;
+    flex: 0 0 auto;
+  }
+  
+  .header__brand {
+    gap: 8px;
+  }
+  
+  .brand__iconWrap {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+  }
+  
+  .brand__icon {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .brand__textLogoHeader {
+    height: 16px;
+    width: auto;
+    max-width: 100px;
+  }
+  
+  .brand__tagline {
+    font-size: 7px;
+    letter-spacing: 0.3px;
+    white-space: normal;
+    line-height: 1;
+  }
+  
+  .header__nav {
+    gap: 2px;
+    flex: 1;
+    justify-content: flex-end;
+    min-width: 0;
+    flex-wrap: wrap;
+  }
+  
+  .header__nav a {
+    margin-left: 4px;
+    font-size: 11px;
+    padding: 4px 8px;
+    white-space: nowrap;
+    border-radius: 4px;
+  }
+  
+  .header__nav--cta {
+    margin-left: 4px;
+    padding: 4px 8px;
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  
+  /* AGGRESSIVE HERO MOBILE OPTIMIZATION */
+  .hero {
+    padding: 16px 12px 12px;
+  }
+  
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .hero__copy {
+    width: 100%;
+  }
+  
+  .hero__title {
+    font-size: clamp(18px, 5vw, 28px);
+    line-height: 1.1;
+    margin: 0;
+  }
+  
+  .hero__subtitle {
+    font-size: 13px;
+    max-width: 100%;
+    margin-top: 8px;
+  }
+  
+  .hero__pills {
+    gap: 4px;
+    margin-bottom: 8px;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+  
+  .pill {
+    font-size: 9px;
+    padding: 3px 6px;
+    min-width: fit-content;
+  }
+  
+  /* Hero core wrap mobile */
+  .hero__coreWrap {
+    width: 100%;
+    max-width: 100vw;
+  }
+  
+  /* Supernova orbit aggressive mobile sizing */
+  .supernova-orbit {
+    width: 140px;
+    height: 140px;
+  }
+  
+  .supernova-orbit--lg {
+    width: 160px;
+    height: 160px;
+  }
+  
+  .core {
+    width: 70px;
+    height: 70px;
+  }
+  
+  .core--lg {
+    width: 85px;
+    height: 85px;
+  }
+  
+  .core__logo {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .core__logo--lg {
+    width: 65px;
+    height: 65px;
+  }
+  
+  .core__glow {
+    inset: -12px;
+    filter: blur(16px);
+  }
+  
+  .core__glow--lg {
+    inset: -14px;
+    filter: blur(18px);
+  }
+  
+  .core__caption {
+    font-size: 11px;
+    max-width: 160px;
+    margin-top: 8px;
+  }
+  
+  .ring {
+    inset: 8px;
+  }
+  
+  .ring--a { inset: 8px; }
+  .ring--b { inset: 16px; }
+  .ring--c { inset: 24px; }
+  
+  .spark {
+    width: 6px;
+    height: 6px;
+  }
+  
+  .spark--1 { top: 40px; }
+  .spark--2 { right: 40px; }
+  .spark--3 { bottom: 40px; left: 40px; }
+  .spark--4 { bottom: 50px; right: 60px; }
+  
+  /* CTA mobile */
+  .hero__ctaRow {
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  
+  .hero__ctaRow .btn-glow,
+  .hero__ctaRow .btn-glow:hover {
+    width: 100%;
+  }
+  
+  .btn-glow {
+    padding: 10px 12px;
+    font-size: 12px;
+  }
+  
+  .hero__micro {
+    margin-top: 8px;
+    font-size: 11px;
+    gap: 6px;
+  }
+  
+  .microDot {
+    width: 8px;
+    height: 8px;
+    min-width: 8px;
+  }
+  
+  /* Section mobile optimization */
+  .section {
+    padding: 24px 12px !important;
+  }
+  
+  .section__title {
+    font-size: clamp(18px, 5vw, 28px);
+  }
+  
+  .section__sub {
+    font-size: 12px;
+  }
+  
+  /* Accordion mobile optimization */
+  .accordion__item {
+    margin-bottom: 10px;
+  }
+  
+  .accordion__header {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  
+  .accordion__icon-bullet {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    font-size: 14px;
+  }
+  
+  .accordion__title {
+    font-size: 13px;
+    font-weight: 600;
+  }
+  
+  .accordion__toggle {
+    font-size: 18px;
+  }
+  
+  .accordion__content {
+    padding: 12px 12px 12px 44px;
+  }
+  
+  .accordion__summary {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+  
+  .accordion__details {
+    font-size: 11px;
+  }
+  
+  .accordion__logos {
+    gap: 8px;
+    margin-top: 10px;
+  }
+  
+  .tech-badge {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  
+  /* Contact section mobile optimization */
+  .contact {
+    gap: 10px;
+  }
+  
+  .contact__box {
+    padding: 12px;
+  }
+  
+  .contact__box h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  
+  .contact__text {
+    font-size: 11px;
+  }
+  
+  .contact__list {
+    line-height: 1.5;
+    font-size: 11px;
+  }
+  
+  /* Partnership section mobile optimization */
+  .partnership-container {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .partnership-content {
+    text-align: center;
+  }
+  
+  .partnership-title {
+    font-size: 14px;
+  }
+  
+  .partnership-description {
+    font-size: 11px;
+  }
+  
+  .partnership-logo {
+    width: 100%;
+  }
+  
+  .partner-logo-wrapper {
+    max-width: 100px;
+    margin: 0 auto;
+  }
+  
+  .partner-logo {
+    width: 70px;
+    height: 70px;
+  }
+  
+  /* Footer mobile optimization */
+  .footer {
+    padding: 16px 12px;
+  }
+  
+  .footer__orbit-text {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+  
+  .social-links {
+    gap: 6px;
+    margin-bottom: 8px;
+  }
+  
+  .social-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 12px;
+  }
+  
+  .footer__inner {
+    font-size: 10px;
+    gap: 2px;
+    flex-wrap: wrap;
+  }
+  
+  .footer__sep {
+    margin: 0 2px;
+  }
 }
 
 .card {
