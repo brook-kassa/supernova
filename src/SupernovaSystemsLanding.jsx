@@ -330,24 +330,50 @@ export default function SupernovaSystemsLanding() {
 
       {/* Partnership Section */}
       <section className="section section--partnership" id="partners">
-        <div className="partnership-container" data-aos="fade-up-cosmic">
-          <div className="partnership-content">
-            <div className="partnership-badge">
-              <span className="partnership-badge__label">Trusted Partner</span>
-            </div>
-            <h3 className="partnership-title">Powered by Enterprise Excellence</h3>
-            <p className="partnership-description">
-              As a certified DELL partner, we deliver enterprise-grade hardware and support that matches our commitment to excellence. Our partnership ensures you get institutional-quality infrastructure at competitive pricing.
-            </p>
+        <div className="partnerships-header" data-aos="fade-up-cosmic">
+          <div className="partnership-badge">
+            <span className="partnership-badge__label">Trusted Partners</span>
           </div>
-          <div className="partnership-logo">
-            <div className="partner-logo-wrapper">
-              <img 
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/2048px-Dell_Logo.svg.png" 
-                alt="DELL Partner Logo" 
-                className="partner-logo"
-              />
-              <div className="partner-logo-glow" aria-hidden="true"></div>
+          <h3 className="partnerships-title">Built on Enterprise Excellence</h3>
+          <p className="partnerships-description">
+            We partner with industry-leading technology providers to deliver enterprise-grade solutions. Our strategic partnerships ensure you receive best-in-class hardware, support, and expertise backed by institutional quality and competitive pricing.
+          </p>
+        </div>
+
+        <div className="partners-grid">
+          {/* Dell Partner Block */}
+          <div className="partner-block" data-aos="fade-up-cosmic">
+            <div className="partner-card">
+              <div className="partner-logo-wrapper">
+                <img 
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Dell_Logo.svg/2048px-Dell_Logo.svg.png" 
+                  alt="DELL Partner Logo" 
+                  className="partner-logo"
+                />
+                <div className="partner-logo-glow" aria-hidden="true"></div>
+              </div>
+              <h4 className="partner-name">Dell Technologies</h4>
+              <p className="partner-details">
+                As a certified Dell partner, we deliver enterprise-grade hardware, infrastructure solutions, and comprehensive support tailored to your IT needs.
+              </p>
+            </div>
+          </div>
+
+          {/* Lenovo Partner Block */}
+          <div className="partner-block" data-aos="fade-up-cosmic">
+            <div className="partner-card">
+              <div className="partner-logo-wrapper">
+                <img 
+                  src="https://cdn.freebiesupply.com/logos/large/2x/lenovo-2-logo-png-transparent.png" 
+                  alt="Lenovo Partner Logo" 
+                  className="partner-logo lenovo-logo"
+                />
+                <div className="partner-logo-glow lenovo-glow" aria-hidden="true"></div>
+              </div>
+              <h4 className="partner-name">Lenovo</h4>
+              <p className="partner-details">
+                Partnering with Lenovo, we provide innovative computing solutions, advanced ThinkSystem servers, and workstations for enterprise environments.
+              </p>
             </div>
           </div>
         </div>
@@ -364,7 +390,7 @@ export default function SupernovaSystemsLanding() {
 
         <div className="contact">
           <div className="contact__box">
-            <h3>📅 Schedule a Free Consultation</h3>
+            <h3>Schedule a Free Consultation</h3>
             <p className="contact__text">
               No obligation. We'll analyze your current setup, identify pain points, and recommend a roadmap tailored to your business.
             </p>

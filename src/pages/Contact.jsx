@@ -1,7 +1,125 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import StarfieldCanvas from "../StarfieldCanvas.jsx";
 
+function ContactFormModal({ isOpen, onClose }) {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    // Send email via mailto
+    const mailtoLink = `mailto:brook.kassa@supernovas.it?subject=Contact Form Submission from ${encodeURIComponent(formData.name)}&body=${encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.company}\n\nMessage:\n${formData.message}`
+    )}`;
+    
+    window.location.href = mailtoLink;
+    
+    // Reset form and close
+    setTimeout(() => {
+      setFormData({ name: '', email: '', phone: '', company: '', message: '' });
+      setIsSubmitting(false);
+      onClose();
+    }, 500);
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="contact-form-modal-overlay" onClick={onClose}>
+      <div className="contact-form-modal" onClick={(e) => e.stopPropagation()}>
+        <button className="contact-form-modal-close" onClick={onClose} aria-label="Close">✕</button>
+        <h2 className="contact-form-modal-title">Tell Us About Your Project</h2>
+        <form onSubmit={handleSubmit} className="contact-form">
+          <div className="form-group">
+            <label htmlFor="name">Name *</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              placeholder="Your name"
+            />
+          </div>
+          
+          <div className="form-group">
+            <label htmlFor="email">Email *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              placeholder="your@email.com"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              placeholder="(123) 456-7890"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="company">Company</label>
+            <input
+              type="text"
+              id="company"
+              name="company"
+              value={formData.company}
+              onChange={handleChange}
+              placeholder="Your company name"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="message">Message *</label>
+            <textarea
+              id="message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+              placeholder="Tell us about your IT needs..."
+              rows="5"
+            />
+          </div>
+
+          <button type="submit" className="btn-glow" disabled={isSubmitting} style={{ width: '100%' }}>
+            <span className="btn-glow__shine" aria-hidden="true" />
+            <span className="btn-glow__text">{isSubmitting ? 'Sending...' : 'Send Message'}</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  );
+}
+
 export default function Contact() {
+  const [showContactForm, setShowContactForm] = useState(false);
+  
   return (
     <div className="page-root">
       <StarfieldCanvas />
@@ -83,11 +201,17 @@ export default function Contact() {
             <h2>Tell Us About Your Project</h2>
             <p>Share details about your IT needs and we'll get back to you with a tailored solution.</p>
             
-            <div className="form-placeholder">
-              <p>📝 Contact form coming soon</p>
-              <p>For now, reach out directly via email or phone above</p>
-            </div>
+            <button 
+              className="btn-glow" 
+              onClick={() => setShowContactForm(true)}
+              style={{ marginTop: '20px' }}
+            >
+              <span className="btn-glow__shine" aria-hidden="true" />
+              <span className="btn-glow__text">Start a Conversation</span>
+            </button>
           </div>
+
+        <ContactFormModal isOpen={showContactForm} onClose={() => setShowContactForm(false)} />
 
           <div className="contact-services" data-aos="fade-up-cosmic" data-aos-delay="300">
             <h2>What We Can Help With</h2>

@@ -148,8 +148,7 @@ export default function SupernovaSystemsLanding() {
         <div className="section__head section__head--center">
           <h2 className="section__title">Services</h2>
           <p className="section__sub">
-            Clear offerings. No fluff. Built for teams that want reliability and
-            momentum.
+            Comprehensive IT services designed for reliability and business continuity.
           </p>
         </div>
 
