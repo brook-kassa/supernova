@@ -237,7 +237,7 @@ export default function SupernovaSystemsLanding() {
             </div>
 
             <h1 className="hero__title" data-aos="fade-up-cosmic" data-aos-delay="100">
-              <span className="hero__titleRed">Systems that won't implode,</span> <span className="hero__titleGold">so your business can explode.</span>
+              <span className="hero__titleRed">Our systems don't implode,</span> <span className="hero__titleGold">so your business can explode.</span>
             </h1>
 
             <p className="hero__subtitle" data-aos="fade-up-cosmic" data-aos-delay="200">
