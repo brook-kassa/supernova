@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import StarfieldCanvas from "./StarfieldCanvas.jsx";
+import SupernovaEmoji from "./SupernovaEmoji.jsx";
 
 function SunIcon() {
   return (
@@ -130,26 +131,24 @@ export default function SupernovaSystemsLanding() {
   const services = useMemo(
     () => [
       {
-        title: "Managed IT Support",
-        desc: "24/7 monitoring, proactive maintenance, and rapid response.",
-        details: "Our team monitors your systems around the clock, catching and fixing issues before they impact your business. We handle patching, updates, helpdesk support, and emergency response—so you don't have to.",
+        title: "Remote Helpdesk & Priority Support",
+        desc: "Business-hours helpdesk with priority SLAs and optional after-hours coverage.",
+        details: "Every plan includes unlimited remote helpdesk support during business hours. Higher tiers add faster response SLAs and after-hours availability so critical issues are handled when they matter most.",
       },
       {
-        title: "Cloud & Infrastructure",
-        desc: "Scalable, secure cloud solutions that grow with your business.",
-        details: "We design and deploy Microsoft Azure environments tailored to your needs. Whether you need hybrid setups, containerization, or serverless architecture, we build infrastructure that scales efficiently. Certified Azure engineers with deep Microsoft ecosystem expertise. We also handle cloud migrations from on-prem with zero disruption—assessment, planning, cutover, and validation to minimize downtime.",
-        logos: ["Azure", "Docker", "Kubernetes"],
+        title: "Monitoring, Patch Management & Backups",
+        desc: "Proactive monitoring, automated patching, and tested cloud backups.",
+        details: "We keep systems healthy with continuous monitoring, patch management, and endpoint protection. Plans also include Microsoft 365 administration plus cloud-to-cloud backups with monthly recovery testing.",
       },
       {
-        title: "Cybersecurity & Compliance",
-        desc: "Multi-layer protection against threats and regulatory requirements.",
-        details: "We implement defense-in-depth security: endpoint protection, network segmentation, identity management, and compliance frameworks like HIPAA, SOC 2, and ISO 27001. Regular audits ensure you stay protected. Includes automated, tested, geo-redundant backups with RPO/RTO guarantees for instant disaster recovery.",
-        logos: ["HIPAA", "SOC 2", "ISO 27001"],
+        title: "Security Awareness & Risk Reviews",
+        desc: "Training, phishing tests, and recurring security & risk reviews.",
+        details: "Secure and Secure+ add structured security awareness training with phishing simulations plus quarterly security and risk reviews to keep your team and policies sharp.",
       },
       {
-        title: "Consulting & Strategy",
-        desc: "Long-term technology roadmaps designed for growth.",
-        details: "We partner with your leadership to define IT strategy aligned with business goals. From infrastructure modernization to digital transformation, we provide expert guidance on tech decisions that scale.",
+        title: "Vendor Management & vCIO Planning",
+        desc: "We coordinate vendors and provide strategic planning guidance.",
+        details: "We act as your vendor liaison for faster resolution and accountability. Higher tiers include vCIO-lite strategic planning so your IT roadmap stays aligned with business goals.",
       },
     ],
     []
@@ -250,7 +249,7 @@ export default function SupernovaSystemsLanding() {
 
             <div className="hero__micro" data-aos="fade-up-cosmic" data-aos-delay="400">
               <span className="microDot" />
-              <span>24/7 monitoring • <span className="text-gold">99.9% uptime guarantee</span> • Certified engineers</span>
+              <span>Endpoint Protection • <span className="text-gold">Unlimited helpdesk</span> • Secure Backups &amp; Recovery</span>
             </div>
           </div>
 
@@ -304,6 +303,80 @@ export default function SupernovaSystemsLanding() {
               onToggle={() => setOpenServices(openServices === idx ? -1 : idx)}
             />
           ))}
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <section className="section" id="pricing">
+        <div className="section__head section__head--center">
+          <h2 className="section__title" data-aos="rotate-in-cosmic">Plans & Pricing</h2>
+          <p className="section__sub" data-aos="fade-up-cosmic">
+            Select the plan that fits your business.
+          </p>
+        </div>
+
+        <div className="pricing-grid" data-aos="fade-up-cosmic">
+          <article className="pricing-card pricing-card--essentials">
+            <div className="pricing-card__header">
+              <h3 className="pricing-card__name">Essentials</h3>
+              <div className="pricing-card__price">
+                <span className="pricing-card__amount">$650</span>
+                <span className="pricing-card__period">/mo</span>
+              </div>
+            </div>
+            <ul className="pricing-card__list">
+              <li><span className="pricing-check">✓</span>Unlimited Remote Helpdesk (Business Hours)</li>
+              <li><span className="pricing-check">✓</span>Proactive Monitoring + Patch Management</li>
+              <li><span className="pricing-check">✓</span>Next-Gen Antivirus / Endpoint Protection</li>
+              <li><span className="pricing-check">✓</span>Microsoft 365 Admin + Basic Security</li>
+              <li><span className="pricing-check">✓</span>Cloud-to-Cloud Backups (M365) + Monthly Test</li>
+              <li><span className="pricing-check">✓</span>Basic Network Management</li>
+              <li><span className="pricing-check">✓</span>Vendor Liaison / Vendor Management (Basic)</li>
+              <li><span className="pricing-check">✓</span>Priority Response SLAs (Standard)</li>
+              <li><span className="pricing-check">✓</span>After-Hours Support (Extra)</li>
+            </ul>
+          </article>
+
+          <article className="pricing-card pricing-card--secure pricing-card--featured">
+            <div className="pricing-card__badge">Most Popular</div>
+            <div className="pricing-card__header">
+              <h3 className="pricing-card__name">Secure</h3>
+              <div className="pricing-card__price">
+                <span className="pricing-card__amount">$775</span>
+                <span className="pricing-card__period">/mo</span>
+              </div>
+            </div>
+            <ul className="pricing-card__list">
+              <li><span className="pricing-check">✓</span>Everything in Essentials</li>
+              <li><span className="pricing-check">✓</span>Annual Security Awareness Training + Phishing Tests</li>
+              <li><span className="pricing-check">✓</span>Quarterly Security &amp; Risk Review</li>
+              <li><span className="pricing-check">✓</span>Vendor Liaison / Vendor Management</li>
+              <li><span className="pricing-check">✓</span>Faster Priority Response SLAs</li>
+              <li><span className="pricing-check">✓</span>(Optional) Dark Web Monitoring / Identity Alerts</li>
+              <li><span className="pricing-check">✓</span>Annual vCIO-lite Strategic Planning</li>
+              <li><span className="pricing-check">✓</span>(Extra) After-Hours Support</li>
+            </ul>
+          </article>
+
+          <article className="pricing-card pricing-card--secureplus">
+            <div className="pricing-card__header">
+              <h3 className="pricing-card__name">Secure+</h3>
+              <div className="pricing-card__price">
+                <span className="pricing-card__amount">$900</span>
+                <span className="pricing-card__period">/mo</span>
+              </div>
+            </div>
+            <ul className="pricing-card__list">
+              <li><span className="pricing-check">✓</span>Everything in Secure</li>
+              <li><span className="pricing-check">✓</span>Quarterly Security Awareness Training + Phishing Tests</li>
+              <li><span className="pricing-check">✓</span>Quarterly Security &amp; Risk Review</li>
+              <li><span className="pricing-check">✓</span>PRIORITY Vendor Liaison / Vendor Management</li>
+              <li><span className="pricing-check">✓</span>HIGH-Priority Response SLAs</li>
+              <li><span className="pricing-check">✓</span>Dark Web Monitoring / Identity Alerts</li>
+              <li><span className="pricing-check">✓</span>Quarterly vCIO-lite Strategic Planning</li>
+              <li><span className="pricing-check">✓</span>After-Hours Support (Limited Included)</li>
+            </ul>
+          </article>
         </div>
       </section>
 
@@ -428,7 +501,10 @@ export default function SupernovaSystemsLanding() {
 
       {/* Footer */}
       <footer className="footer">
-        <p className="footer__orbit-text">🚀 Stay in our orbit!</p>
+        <p className="footer__orbit-text">
+          <img src="/ss.png" alt="Supernova Systems" className="emoji-icon emoji-inline orbit-logo" />
+          Stay in our orbit!
+        </p>
         <div className="social-links">
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>

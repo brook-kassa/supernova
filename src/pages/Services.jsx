@@ -1,37 +1,38 @@
 import { Link } from "react-router-dom";
 import StarfieldCanvas from "../StarfieldCanvas.jsx";
+import SupernovaEmoji from "../SupernovaEmoji.jsx";
 
 export default function Services() {
   const services = [
     {
       title: "Remote Monitoring & Management",
       description: "24/7 proactive monitoring of your infrastructure with automated alerts, patch management, and preventative maintenance to keep systems running smoothly.",
-      icon: "📡"
+      icon: "radar"
     },
     {
       title: "Cybersecurity & Endpoint Protection",
       description: "Enterprise-grade security solutions including threat detection, endpoint protection, vulnerability assessments, and compliance support.",
-      icon: "🔒"
+      icon: "lock"
     },
     {
       title: "Cloud Migrations & Integration",
       description: "Seamless migration from on-premises to cloud platforms with zero downtime, SaaS integration, and ongoing cloud optimization.",
-      icon: "☁️"
+      icon: "cloud"
     },
     {
       title: "Helpdesk & Technical Support",
       description: "Remote and on-site technical support with fast response times, clear communication, and human-first problem solving.",
-      icon: "🎧"
+      icon: "headset"
     },
     {
       title: "IT Documentation & Knowledge Bases",
       description: "Comprehensive documentation of your IT infrastructure, policies, and procedures to ensure continuity and empower your team.",
-      icon: "📚"
+      icon: "book"
     },
     {
       title: "Proactive Consulting & Planning",
       description: "Strategic IT consulting to align technology with business goals, roadmap planning, and infrastructure optimization.",
-      icon: "🎯"
+      icon: "target"
     }
   ];
 
@@ -86,11 +87,84 @@ export default function Services() {
         <div className="services-grid">
           {services.map((service, idx) => (
             <div key={service.title} className="service-card" data-aos="glow-fade" data-aos-delay={idx * 100}>
-              <div className="service-icon">{service.icon}</div>
+              <div className="service-icon">
+                <SupernovaEmoji name={service.icon} alt="" size={40} />
+              </div>
               <h3 className="service-title">{service.title}</h3>
               <p className="service-desc">{service.description}</p>
             </div>
           ))}
+        </div>
+
+        <div className="section__head section__head--center" style={{ marginTop: "48px" }}>
+          <h2 className="section__title" data-aos="rotate-in-cosmic">Plans &amp; Pricing</h2>
+          <p className="section__sub" data-aos="fade-up-cosmic">
+            Select the plan that fits your business.
+          </p>
+        </div>
+
+        <div className="pricing-grid" data-aos="fade-up-cosmic">
+          <article className="pricing-card pricing-card--essentials">
+            <div className="pricing-card__header">
+              <h3 className="pricing-card__name">Essentials</h3>
+              <div className="pricing-card__price">
+                <span className="pricing-card__amount">$650</span>
+                <span className="pricing-card__period">/mo</span>
+              </div>
+            </div>
+            <ul className="pricing-card__list">
+              <li><span className="pricing-check">✓</span>Unlimited Remote Helpdesk (Business Hours)</li>
+              <li><span className="pricing-check">✓</span>Proactive Monitoring + Patch Management</li>
+              <li><span className="pricing-check">✓</span>Next-Gen Antivirus / Endpoint Protection</li>
+              <li><span className="pricing-check">✓</span>Microsoft 365 Admin + Basic Security</li>
+              <li><span className="pricing-check">✓</span>Cloud-to-Cloud Backups (M365) + Monthly Test</li>
+              <li><span className="pricing-check">✓</span>Basic Network Management</li>
+              <li><span className="pricing-check">✓</span>Vendor Liaison / Vendor Management (Basic)</li>
+              <li><span className="pricing-check">✓</span>Priority Response SLAs (Standard)</li>
+              <li><span className="pricing-check">✓</span>After-Hours Support (Extra)</li>
+            </ul>
+          </article>
+
+          <article className="pricing-card pricing-card--secure pricing-card--featured">
+            <div className="pricing-card__badge">Most Popular</div>
+            <div className="pricing-card__header">
+              <h3 className="pricing-card__name">Secure</h3>
+              <div className="pricing-card__price">
+                <span className="pricing-card__amount">$775</span>
+                <span className="pricing-card__period">/mo</span>
+              </div>
+            </div>
+            <ul className="pricing-card__list">
+              <li><span className="pricing-check">✓</span>Everything in Essentials</li>
+              <li><span className="pricing-check">✓</span>Annual Security Awareness Training + Phishing Tests</li>
+              <li><span className="pricing-check">✓</span>Quarterly Security &amp; Risk Review</li>
+              <li><span className="pricing-check">✓</span>Vendor Liaison / Vendor Management</li>
+              <li><span className="pricing-check">✓</span>Faster Priority Response SLAs</li>
+              <li><span className="pricing-check">✓</span>(Optional) Dark Web Monitoring / Identity Alerts</li>
+              <li><span className="pricing-check">✓</span>Annual vCIO-lite Strategic Planning</li>
+              <li><span className="pricing-check">✓</span>(Extra) After-Hours Support</li>
+            </ul>
+          </article>
+
+          <article className="pricing-card pricing-card--secureplus">
+            <div className="pricing-card__header">
+              <h3 className="pricing-card__name">Secure+</h3>
+              <div className="pricing-card__price">
+                <span className="pricing-card__amount">$900</span>
+                <span className="pricing-card__period">/mo</span>
+              </div>
+            </div>
+            <ul className="pricing-card__list">
+              <li><span className="pricing-check">✓</span>Everything in Secure</li>
+              <li><span className="pricing-check">✓</span>Quarterly Security Awareness Training + Phishing Tests</li>
+              <li><span className="pricing-check">✓</span>Quarterly Security &amp; Risk Review</li>
+              <li><span className="pricing-check">✓</span>PRIORITY Vendor Liaison / Vendor Management</li>
+              <li><span className="pricing-check">✓</span>HIGH-Priority Response SLAs</li>
+              <li><span className="pricing-check">✓</span>Dark Web Monitoring / Identity Alerts</li>
+              <li><span className="pricing-check">✓</span>Quarterly vCIO-lite Strategic Planning</li>
+              <li><span className="pricing-check">✓</span>After-Hours Support (Limited Included)</li>
+            </ul>
+          </article>
         </div>
 
         <div className="cta-section" data-aos="fade-up-cosmic">
@@ -104,7 +178,10 @@ export default function Services() {
 
       {/* Footer */}
       <footer className="footer">
-        <p className="footer__orbit-text">🚀 Stay in our orbit!</p>
+        <p className="footer__orbit-text">
+          <img src="/ss.png" alt="Supernova Systems" className="emoji-icon emoji-inline orbit-logo" />
+          Stay in our orbit!
+        </p>
         <div className="social-links">
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>

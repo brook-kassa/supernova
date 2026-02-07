@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import StarfieldCanvas from "../StarfieldCanvas.jsx";
+import SupernovaEmoji from "../SupernovaEmoji.jsx";
 
 export default function About() {
   return (
@@ -136,7 +137,10 @@ export default function About() {
 
       {/* Footer */}
       <footer className="footer">
-        <p className="footer__orbit-text">🚀 Stay in our orbit!</p>
+        <p className="footer__orbit-text">
+          <img src="/ss.png" alt="Supernova Systems" className="emoji-icon emoji-inline orbit-logo" />
+          Stay in our orbit!
+        </p>
         <div className="social-links">
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>

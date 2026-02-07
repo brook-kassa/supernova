@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import StarfieldCanvas from "../StarfieldCanvas.jsx";
+import SupernovaEmoji from "../SupernovaEmoji.jsx";
 
 export default function Blog() {
   return (
@@ -64,32 +65,50 @@ export default function Blog() {
             
             <div className="values-grid">
               <div className="value-card" data-aos="pulse-in-cosmic" data-aos-delay="300">
-                <h3>☁️ Cloud Guides</h3>
+                <h3>
+                  <SupernovaEmoji name="cloud" alt="" className="emoji-inline" />
+                  Cloud Guides
+                </h3>
                 <p>Step-by-step tutorials on Azure and hybrid cloud deployments</p>
               </div>
 
               <div className="value-card" data-aos="pulse-in-cosmic" data-aos-delay="350">
-                <h3>🔒 Security Best Practices</h3>
+                <h3>
+                  <SupernovaEmoji name="lock" alt="" className="emoji-inline" />
+                  Security Best Practices
+                </h3>
                 <p>Practical cybersecurity tips, compliance checklists, and threat mitigation strategies</p>
               </div>
 
               <div className="value-card" data-aos="pulse-in-cosmic" data-aos-delay="400">
-                <h3>📊 Case Studies</h3>
+                <h3>
+                  <SupernovaEmoji name="chart" alt="" className="emoji-inline" />
+                  Case Studies
+                </h3>
                 <p>Real-world examples of how we've helped businesses transform their IT</p>
               </div>
 
               <div className="value-card" data-aos="pulse-in-cosmic" data-aos-delay="450">
-                <h3>🚀 Startup Tech Tips</h3>
+                <h3>
+                  <SupernovaEmoji name="rocket" alt="" className="emoji-inline" />
+                  Startup Tech Tips
+                </h3>
                 <p>Budget-friendly strategies for lean teams building scalable infrastructure</p>
               </div>
 
               <div className="value-card" data-aos="pulse-in-cosmic" data-aos-delay="500">
-                <h3>🛠️ Tools & Resources</h3>
+                <h3>
+                  <SupernovaEmoji name="tools" alt="" className="emoji-inline" />
+                  Tools & Resources
+                </h3>
                 <p>Curated lists of the software, frameworks, and platforms we recommend</p>
               </div>
 
               <div className="value-card" data-aos="pulse-in-cosmic" data-aos-delay="550">
-                <h3>💡 Industry Insights</h3>
+                <h3>
+                  <SupernovaEmoji name="idea" alt="" className="emoji-inline" />
+                  Industry Insights
+                </h3>
                 <p>Trends, news, and analysis shaping the future of managed IT services</p>
               </div>
             </div>
@@ -98,7 +117,8 @@ export default function Blog() {
           <div className="blog-preview" data-aos="fade-up-cosmic" data-aos-delay="600">
             <h2>Recent Posts</h2>
             <p className="coming-soon-text">
-              🌟 Our blog is launching soon! Subscribe to our newsletter or follow us on social media to be notified when we publish our first articles.
+              <SupernovaEmoji name="star" alt="" className="emoji-inline" />
+              Our blog is launching soon! Subscribe to our newsletter or follow us on social media to be notified when we publish our first articles.
             </p>
             
             <div className="blog-posts-placeholder">
@@ -137,7 +157,10 @@ export default function Blog() {
 
       {/* Footer */}
       <footer className="footer">
-        <p className="footer__orbit-text">🚀 Stay in our orbit!</p>
+        <p className="footer__orbit-text">
+          <img src="/ss.png" alt="Supernova Systems" className="emoji-icon emoji-inline orbit-logo" />
+          Stay in our orbit!
+        </p>
         <div className="social-links">
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>
