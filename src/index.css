@@ -1517,9 +1517,9 @@ a:hover {
   text-align: center;
   font-size: 1.25rem;
   font-weight: 600;
-  color: #ff4444;
+  color: #f9a825;
   margin: 0 0 20px 0;
-  text-shadow: 0 0 12px rgba(176, 0, 32, 0.6);
+  text-shadow: 0 0 12px rgba(249, 168, 37, 0.45);
   display: inline-flex;
   align-items: center;
   gap: 8px;
