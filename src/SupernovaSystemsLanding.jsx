@@ -47,17 +47,18 @@ function Pill({ children }) {
   return <span className="pill">{children}</span>;
 }
 
-function GlowButton({ children, onClick, href }) {
+function GlowButton({ children, onClick, href, className = "" }) {
+  const classes = className ? `btn-glow ${className}` : "btn-glow";
   if (onClick) {
     return (
-      <button className="btn-glow" onClick={onClick}>
+      <button className={classes} onClick={onClick}>
         <span className="btn-glow__shine" aria-hidden="true" />
         <span className="btn-glow__text">{children}</span>
       </button>
     );
   }
   return (
-    <a className="btn-glow" href={href}>
+    <a className={classes} href={href}>
       <span className="btn-glow__shine" aria-hidden="true" />
       <span className="btn-glow__text">{children}</span>
     </a>
@@ -244,7 +245,7 @@ export default function SupernovaSystemsLanding() {
             </p>
 
             <div className="hero__ctaRow" data-aos="fade-up-cosmic" data-aos-delay="300">
-              <GlowButton onClick={() => setShowCalendly(true)}>Schedule Free Consultation</GlowButton>
+              <GlowButton className="btn-glow--consultation" onClick={() => setShowCalendly(true)}>Schedule Free Consultation</GlowButton>
             </div>
 
             <div className="hero__micro" data-aos="fade-up-cosmic" data-aos-delay="400">
@@ -489,7 +490,7 @@ export default function SupernovaSystemsLanding() {
               <li><span className="checkmark">✓</span> Zero pressure, just solutions</li>
               <li><span className="checkmark">✓</span> Clear next steps</li>
             </ul>
-            <button className="btn-glow" onClick={() => setShowCalendly(true)} style={{ marginTop: "16px", width: "100%" }}>
+            <button className="btn-glow btn-glow--consultation" onClick={() => setShowCalendly(true)} style={{ marginTop: "16px", width: "100%" }}>
               <span className="btn-glow__shine" aria-hidden="true" />
               <span className="btn-glow__text">Schedule Free Consultation</span>
             </button>
@@ -509,22 +510,22 @@ export default function SupernovaSystemsLanding() {
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://x.com" className="social-btn" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/supernovasysit" className="social-btn" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-x-twitter"></i>
           </a>
-          <a href="https://youtube.com" className="social-btn" title="YouTube" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@SupernovaSystems" className="social-btn" title="YouTube" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-youtube"></i>
           </a>
-          <a href="https://tiktok.com" className="social-btn" title="TikTok" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.tiktok.com/@supernovasystemsit?lang=en" className="social-btn" title="TikTok" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-tiktok"></i>
           </a>
-          <a href="https://instagram.com" className="social-btn" title="Instagram" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/super.novasysit/" className="social-btn" title="Instagram" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://facebook.com" className="social-btn" title="Facebook" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61583750009326" className="social-btn" title="Facebook" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://discord.gg/kXTSJEwt" className="social-btn" title="Discord" target="_blank" rel="noopener noreferrer">
+          <a href="https://discord.gg/DqqXGw6geg" className="social-btn" title="Discord" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-discord"></i>
           </a>
         </div>

@@ -105,22 +105,22 @@ export default function NotFound() {
           <a href="https://www.linkedin.com/company/supernova-systems-llc/about/?viewAsMember=true" className="social-btn" title="LinkedIn" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-linkedin-in"></i>
           </a>
-          <a href="https://x.com" className="social-btn" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
+          <a href="https://x.com/supernovasysit" className="social-btn" title="X (Twitter)" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-x-twitter"></i>
           </a>
-          <a href="https://youtube.com" className="social-btn" title="YouTube" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.youtube.com/@SupernovaSystems" className="social-btn" title="YouTube" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-youtube"></i>
           </a>
-          <a href="https://tiktok.com" className="social-btn" title="TikTok" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.tiktok.com/@supernovasystemsit?lang=en" className="social-btn" title="TikTok" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-tiktok"></i>
           </a>
-          <a href="https://instagram.com" className="social-btn" title="Instagram" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/super.novasysit/" className="social-btn" title="Instagram" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
-          <a href="https://facebook.com" className="social-btn" title="Facebook" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.facebook.com/profile.php?id=61583750009326" className="social-btn" title="Facebook" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://discord.gg/kXTSJEwt" className="social-btn" title="Discord" target="_blank" rel="noopener noreferrer">
+          <a href="https://discord.gg/DqqXGw6geg" className="social-btn" title="Discord" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-discord"></i>
           </a>
         </div>
