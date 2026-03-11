@@ -95,6 +95,41 @@ function CalendlyModal({ isOpen, onClose }) {
   );
 }
 
+function NeumorphicStats() {
+  const stats = [
+    { value: "99.9%", label: "Uptime SLA", icon: "fas fa-shield-alt" },
+    { value: "<4hr", label: "Avg Response Time", icon: "fas fa-bolt" },
+    { value: "100+", label: "Endpoints Protected", icon: "fas fa-desktop" },
+    { value: "24/7", label: "Active Monitoring", icon: "fas fa-eye" },
+  ];
+
+  return (
+    <section className="neuro-stats">
+      <div className="neuro-stats__inner">
+        <div className="neuro-stats__eyebrow" data-aos="fade-up-cosmic">
+          <span>By the numbers</span>
+        </div>
+        <div className="neuro-stats__grid">
+          {stats.map((stat, idx) => (
+            <div
+              key={idx}
+              className="neuro-card"
+              data-aos="fade-up-cosmic"
+              data-aos-delay={idx * 90}
+            >
+              <div className="neuro-card__icon-wrap">
+                <i className={stat.icon} aria-hidden="true" />
+              </div>
+              <div className="neuro-card__value">{stat.value}</div>
+              <div className="neuro-card__label">{stat.label}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function AccordionItem({ title, desc, details, isOpen, onToggle, logos }) {
   return (
     <div className="accordion__item">
@@ -282,6 +317,9 @@ export default function SupernovaSystemsLanding() {
           </Link>
         </div>
       </section>
+
+      {/* Neumorphic Stats */}
+      <NeumorphicStats />
 
       {/* Services */}
       <section className="section" id="services">
