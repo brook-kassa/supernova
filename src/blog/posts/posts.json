@@ -1,0 +1,165 @@
+[
+  {
+    "slug": "security-baseline-checklist-for-growing-teams",
+    "category": "practical-it-tips",
+    "title": "Security Baseline Checklist for Growing Teams",
+    "description": "A practical 30-day checklist to reduce risk with MFA, endpoint controls, and backup verification.",
+    "author": "Brook Kassa",
+    "date": "2026-03-11",
+    "tags": ["cybersecurity", "mfa", "backups", "managed-it"],
+    "featured": false,
+    "content": [
+      {
+        "heading": "Start with identity and access",
+        "paragraphs": [
+          "If your identity layer is weak, every other control is easier to bypass. Require MFA for all privileged and remote access accounts first.",
+          "Then review stale accounts and service accounts. Disable what is unused, rotate secrets, and centralize admin authentication policies."
+        ]
+      },
+      {
+        "heading": "Harden endpoints before adding tools",
+        "paragraphs": [
+          "Enforce full-disk encryption, patch automation, and modern endpoint detection. This gives you strong baseline protection before you buy another security dashboard.",
+          "Document one response workflow for malware events so your team can act quickly under pressure."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "network-documentation-that-actually-helps",
+    "category": "practical-it-tips",
+    "title": "Network Documentation That Actually Helps During Incidents",
+    "description": "How to keep diagrams and runbooks useful when systems change every month.",
+    "author": "Brook Kassa",
+    "date": "2026-03-06",
+    "tags": ["operations", "networking", "incident-response"],
+    "featured": false,
+    "content": [
+      {
+        "heading": "Focus on operational clarity",
+        "paragraphs": [
+          "Your documentation should answer three questions fast: where traffic flows, who owns each system, and how to fail over safely.",
+          "Capture only what your team needs during troubleshooting. Too much detail becomes stale and slows down response times."
+        ]
+      },
+      {
+        "heading": "Build review into the workflow",
+        "paragraphs": [
+          "Attach a documentation review step to every change ticket. If architecture changes but diagrams do not, your docs become risk instead of support.",
+          "Treat docs as part of production quality, not optional overhead."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "hybrid-cloud-migration-cut-costs-by-38-percent",
+    "category": "cloud-success-stories",
+    "title": "Hybrid Cloud Migration Cut Costs by 38% in Six Months",
+    "description": "How a regional services company reduced spend and improved reliability by modernizing workloads.",
+    "author": "Supernova Systems Team",
+    "date": "2026-03-12",
+    "tags": ["azure", "cloud-migration", "cost-optimization"],
+    "featured": true,
+    "content": [
+      {
+        "heading": "The challenge",
+        "paragraphs": [
+          "The client faced unpredictable infrastructure costs and recurring downtime from aging on-prem systems.",
+          "They needed stronger resilience without increasing IT headcount."
+        ]
+      },
+      {
+        "heading": "What changed",
+        "paragraphs": [
+          "We moved customer-facing apps to Azure, retained latency-sensitive systems on-prem, and added centralized monitoring with performance baselines.",
+          "Reserved capacity planning and rightsizing removed overprovisioning, which delivered most of the savings."
+        ]
+      },
+      {
+        "heading": "Results",
+        "paragraphs": [
+          "Infrastructure spend dropped 38% and incident volume dropped 42% over six months.",
+          "Leadership gained monthly cost visibility and clearer planning for future growth."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "startup-to-scaleup-cloud-governance-journey",
+    "category": "cloud-success-stories",
+    "title": "From Startup to Scale-Up: A Cloud Governance Journey",
+    "description": "A blueprint for introducing policy, tagging, and access control without slowing product teams.",
+    "author": "Supernova Systems Team",
+    "date": "2026-03-04",
+    "tags": ["governance", "finops", "cloud-security"],
+    "featured": false,
+    "content": [
+      {
+        "heading": "Growing fast created cloud sprawl",
+        "paragraphs": [
+          "Teams shipped quickly, but billing, ownership, and access boundaries became unclear across environments.",
+          "The business needed governance that supported speed instead of blocking it."
+        ]
+      },
+      {
+        "heading": "Guardrails over gatekeeping",
+        "paragraphs": [
+          "We rolled out baseline policies, mandatory tags, and environment templates that teams could adopt with minimal friction.",
+          "This made spend attribution and security reviews significantly faster."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "why-aiops-will-reshape-managed-it",
+    "category": "future-of-it",
+    "title": "Why AIOps Will Reshape Managed IT in the Next Three Years",
+    "description": "What automation and signal correlation mean for faster incident response and proactive support.",
+    "author": "Supernova Systems Research",
+    "date": "2026-03-09",
+    "tags": ["aiops", "automation", "observability"],
+    "featured": false,
+    "content": [
+      {
+        "heading": "From alert noise to actionable context",
+        "paragraphs": [
+          "Most teams still chase noisy alerts. AIOps systems correlate events to surface probable root causes earlier in the incident lifecycle.",
+          "The biggest value is not replacing engineers. It is reducing time spent triaging fragmented signals."
+        ]
+      },
+      {
+        "heading": "What leaders should do now",
+        "paragraphs": [
+          "Standardize telemetry and incident tagging first. Models perform better when data quality is consistent.",
+          "Start with one high-impact workflow, measure MTTR improvements, then expand automation responsibly."
+        ]
+      }
+    ]
+  },
+  {
+    "slug": "zero-trust-beyond-the-buzzword",
+    "category": "future-of-it",
+    "title": "Zero Trust Beyond the Buzzword",
+    "description": "How Zero Trust architecture is evolving from policy theory to practical operating model.",
+    "author": "Supernova Systems Research",
+    "date": "2026-03-02",
+    "tags": ["zero-trust", "identity", "security-architecture"],
+    "featured": false,
+    "content": [
+      {
+        "heading": "The shift from perimeter to identity",
+        "paragraphs": [
+          "As SaaS and hybrid work expand, identity and device posture become the real security perimeter.",
+          "Organizations moving early are combining conditional access, segmentation, and continuous validation."
+        ]
+      },
+      {
+        "heading": "Operational maturity matters",
+        "paragraphs": [
+          "Zero Trust programs fail when they are treated as one-time projects. They succeed when tied to continuous operations and measurable controls.",
+          "Roadmaps should include user experience metrics to prevent security controls from slowing business execution."
+        ]
+      }
+    ]
+  }
+]
