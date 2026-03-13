@@ -205,20 +205,39 @@ a:hover {
 
 @keyframes brandGlowPulse {
   0%, 100% {
-    filter: drop-shadow(0 0 20px rgba(176, 0, 32, 0.7)) drop-shadow(0 0 40px rgba(249, 168, 37, 0.4));
+    filter: drop-shadow(0 0 14px rgba(176, 0, 32, 0.55)) drop-shadow(0 0 24px rgba(249, 168, 37, 0.28));
   }
   50% {
-    filter: drop-shadow(0 0 30px rgba(176, 0, 32, 1)) drop-shadow(0 0 60px rgba(249, 168, 37, 0.6));
+    filter: drop-shadow(0 0 20px rgba(176, 0, 32, 0.75)) drop-shadow(0 0 34px rgba(249, 168, 37, 0.38));
   }
 }
 
 .brand__text {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 4px;
   justify-content: center;
   position: relative;
   transition: all 0.3s ease;
+  padding: 8px 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.96);
+  border: 1px solid rgba(176, 0, 32, 0.25);
+  box-shadow:
+    8px 8px 16px rgba(0, 0, 0, 0.65),
+    -6px -6px 14px rgba(255, 255, 255, 0.035),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.06),
+    inset -1px -1px 0 rgba(176, 0, 32, 0.18);
+}
+
+.header__brand-link:hover .brand__text {
+  border-color: rgba(176, 0, 32, 0.36);
+  box-shadow:
+    9px 9px 18px rgba(0, 0, 0, 0.66),
+    -5px -5px 12px rgba(255, 255, 255, 0.035),
+    inset 1px 1px 0 rgba(255, 255, 255, 0.07),
+    inset -1px -1px 0 rgba(176, 0, 32, 0.2),
+    0 0 12px rgba(176, 0, 32, 0.16);
 }
 
 .brand__iconWrap {
@@ -238,23 +257,33 @@ a:hover {
 }
 
 .header__brand-link:hover .brand__iconGlow {
-  opacity: 0.8;
+  opacity: 0.62;
 }
 
 .brand__icon {
   position: relative;
-  width: 60px;
-  height: 60px;
+  width: 100%;
+  height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 0 12px rgba(176, 0, 32, 0.5));
+  filter:
+    drop-shadow(3px 3px 6px rgba(0, 0, 0, 0.58))
+    drop-shadow(-2px -2px 4px rgba(255, 255, 255, 0.1))
+    drop-shadow(0 0 7px rgba(176, 0, 32, 0.28));
   transition: all 0.3s ease;
+}
+
+.header__brand-link:hover .brand__icon {
+  filter:
+    drop-shadow(4px 4px 7px rgba(0, 0, 0, 0.62))
+    drop-shadow(-2px -2px 4px rgba(255, 255, 255, 0.12))
+    drop-shadow(0 0 9px rgba(176, 0, 32, 0.34));
 }
 
 .brand__textLogoHeader {
   height: 28px;
   object-fit: contain;
   opacity: 1;
-  filter: drop-shadow(0 0 8px rgba(176, 0, 32, 0.3));
+  filter: drop-shadow(0 0 6px rgba(176, 0, 32, 0.35));
   transition: all 0.3s ease;
   position: relative;
   image-rendering: crisp-edges;
@@ -860,14 +889,23 @@ a:hover {
   }
   
   .brand__icon {
-    width: 40px;
-    height: 40px;
+    width: 100%;
+    height: 100%;
   }
   
   .brand__textLogoHeader {
     height: 16px;
     width: auto;
     max-width: 100px;
+  }
+
+  .brand__text {
+    padding: 6px 8px;
+    border-radius: 10px;
+    box-shadow:
+      4px 4px 10px rgba(0, 0, 0, 0.55),
+      -3px -3px 8px rgba(255, 255, 255, 0.03),
+      inset 1px 1px 0 rgba(255, 255, 255, 0.04);
   }
   
   .brand__tagline {
